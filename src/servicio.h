@@ -27,11 +27,13 @@ void pedirDatosServicio(servicio *servicio);
 
 void mostrarDatosServicio(servicio servicio);
 
+
+void mostrarListaServicios(servicio listaServicios[MAXSERVICIOS], int tam);
+
 int estaPuertoOcupado(servicio listaServicios[MAXSERVICIOS], int tam, int puerto);
 
 int insertarServicio(servicio listaServicios[MAXSERVICIOS], int tam, servicio s);
 
-int getCargaServidor(servicio listaServicios[MAXSERVICIOS], int tam, char nombre[MAXSERVIDOR]);
 
 
 #endif /* SERVICIO_H_ */
