@@ -11,7 +11,7 @@
 #define MAXNOMBRESERV 30
 #define MAXSERVIDOR 50
 #define MAXIP 17
-#define MAXSERVICIOS
+#define MAXSERVICIOS 30
 
 
 typedef struct {

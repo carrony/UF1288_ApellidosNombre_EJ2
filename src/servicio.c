@@ -41,7 +41,38 @@ void pedirDatosServicio(servicio *servicio) {
 
 void mostrarDatosServicio(servicio servicio) {
 	printf("\nNombre Servicio: %s",servicio.nombreServicio);
-	printf("\nServidor: %s", servicio.nombreServicio);
+	printf("\nServidor: %s", servicio.nombreServidor);
 	printf("\nIP:puerto: %s:%d",servicio.ipServidor,servicio.puerto);
 	printf("\nNúm. Clientes: %d\n", servicio.numClientes);
+}
+
+
+void mostrarListaServicios(servicio listaServicios[MAXSERVICIOS], int tam){
+	int i;
+	for (i=0;i<tam;i++) {
+		mostrarDatosServicio(listaServicios[i]);
+		printf("\n");
+	}
+}
+
+int estaPuertoOcupado(servicio listaServicios[MAXSERVICIOS], int tam, int puerto) {
+	int i;
+	int encontrado=0;
+	for (i=0;i<tam;i++) {
+		if(listaServicios[i].puerto==puerto) {
+			encontrado=1;
+		}
+	}
+	return encontrado;
+}
+
+int insertarServicio(servicio listaServicios[MAXSERVICIOS], int tam, servicio s) {
+	if (tam>=MAXSERVICIOS){
+		return tam;
+	}
+	if (!estaPuertoOcupado(listaServicios,tam, s.puerto)) {
+		listaServicios[tam]=s;
+		tam++;
+	}
+	return tam;
 }
