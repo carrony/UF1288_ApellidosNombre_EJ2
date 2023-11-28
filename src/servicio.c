@@ -41,7 +41,8 @@ void pedirDatosServicio(servicio *servicio) {
 
 void mostrarDatosServicio(servicio servicio) {
 	printf("\nNombre Servicio: %s",servicio.nombreServicio);
-	printf("\nServidor: %s", servicio.nombreServicio);
+	printf("\nServidor: %s", servicio.nombreServidor);
 	printf("\nIP:puerto: %s:%d",servicio.ipServidor,servicio.puerto);
 	printf("\nNúm. Clientes: %d\n", servicio.numClientes);
 }
+
